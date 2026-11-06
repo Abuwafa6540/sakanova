@@ -3,6 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="سكنوفا — تعارف جاد بهدف الزواج">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="سكنوفا SAKANOVA">
+<meta property="og:title" content="سكنوفا SAKANOVA — تعارف جاد بهدف الزواج">
+<meta property="og:description" content="تطبيق تعارف جاد بهدف الزواج">
+<meta property="og:url" content="https://abuwafa6540.github.io/sakanova/">
+<meta property="og:image" content="https://abuwafa6540.github.io/sakanova/og-share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2A1240">
+<link rel="apple-touch-icon" href="sakanova-icon-512.png">
 <title>سكنوفا SAKANOVA — نسخة تجريبية لتطبيق الزواج</title>
 
 <style>
@@ -294,10 +306,10 @@ var PN={free:"مجانية",pro:"فضي",gold:"ذهبي"};
 function tier(){return S.plan==="gold"?"gold":(S.plan==="pro"||S.bonus>0||S.rw>Date.now()?"pro":"free")}
 function sync(){S.sub=tier()!=="free"}
 function LIM(){var t=tier();return t==="gold"?999:(t==="pro"?10:3)}
-function doCopy(){var t="sakanova.app/i/WF7Q4K";try{navigator.clipboard.writeText(t).then(function(){S.iMsg="تم نسخ الرابط.";draw()},function(){S.iMsg="تعذر النسخ. انسخ الرابط يدوياً.";draw()})}catch(e){S.iMsg="تعذر النسخ. انسخ الرابط يدوياً.";draw()}}
-function doShare(){var t="سجّل في سكنوفا SAKANOVA للتعارف الجاد: sakanova.app/i/WF7Q4K";if(navigator.share){navigator.share({title:"SAKANOVA",text:t}).catch(function(){})}else{doCopy()}}
+function doCopy(){var t="https://abuwafa6540.github.io/sakanova/";try{navigator.clipboard.writeText(t).then(function(){S.iMsg="تم نسخ الرابط.";draw()},function(){S.iMsg="تعذر النسخ. انسخ الرابط يدوياً.";draw()})}catch(e){S.iMsg="تعذر النسخ. انسخ الرابط يدوياً.";draw()}}
+function doShare(){var t="سجّل في سكنوفا SAKANOVA للتعارف الجاد: https://abuwafa6540.github.io/sakanova/";if(navigator.share){navigator.share({title:"SAKANOVA",text:t}).catch(function(){})}else{doCopy()}}
 function invite(){
- var link="sakanova.app/i/WF7Q4K",m=encodeURIComponent("سجّل في سكنوفا SAKANOVA للتعارف الجاد: "+link),as=' class="btn ghost" style="text-align:center;text-decoration:none" target="_blank" rel="noopener"';
+ var link="https://abuwafa6540.github.io/sakanova/",m=encodeURIComponent("سجّل في سكنوفا SAKANOVA للتعارف الجاد: "+link),as=' class="btn ghost" style="text-align:center;text-decoration:none" target="_blank" rel="noopener"';
  return '<p class="lead">ادعُ أصدقاءك للانضمام. عن كل صديق يسجّل تحصل على ٣ أيام من الباقة الفضية مجاناً.</p><div class="status" style="margin:0 0 1rem">رابطك (تجريبي): <b dir="ltr">'+link+'</b></div><div class="send" style="margin-bottom:.75rem"><button class="btn" data-a="share">شارك الرابط</button><button class="btn ghost" data-a="copy">انسخ</button></div><div class="send" style="margin-bottom:1rem;flex-wrap:wrap"><a'+as+' href="https://wa.me/?text='+m+'">واتساب</a><a'+as+' href="sms:?&body='+m+'">رسالة نصية</a><a'+as+' href="mailto:?subject='+encodeURIComponent("دعوة إلى سكنوفا SAKANOVA")+'&body='+m+'">بريد</a></div>'+(S.iMsg?'<p class="note">'+S.iMsg+'</p>':'')+'<ul class="cmp"><li><span>الأصدقاء المنضمّون</span><span>'+S.invN+'</span></li><li><span>أيام الفضي المجانية</span><span>'+S.bonus+'</span></li></ul><button class="btn ghost" data-a="join">جرّب: انضم صديق (تجريبي)</button>';
 }
 var TH={purple:["#2B1055","#3A1C6E","#F3ECFF","#C4B0EA","#5A3C94","#B79CFF","#1E0B3F","#FF8FC6","#46267F"],lilac:["#F1ECFA","#FFFFFF","#2A2144","#675C85","#DCD3EE","#5B3FA0","#FFFFFF","#B03A78","#E6DDF6"],green:["#F2F6F5","#FFFFFF","#12302C","#566C68","#D3DFDC","#0F4C45","#FFFFFF","#8A2D52","#E1EEEA"],blue:["#EEF3FA","#FFFFFF","#14253F","#556A88","#D2DCEC","#1E5AA8","#FFFFFF","#B8460B","#DFE9F6"],rose:["#FBEFF3","#FFFFFF","#3A1626","#7A5566","#EBD2DB","#B03A5E","#FFFFFF","#5B3FA0","#F6DFE7"],dark:["#14111F","#1E1930","#EDE8FA","#A79EC4","#342C4F","#A98BFF","#14111F","#F08BB8","#2A2342"]};
@@ -428,7 +440,7 @@ var _v1=view;view=function(){if(S.step==="rpt")return rptv();if(S.step==="verify
 function loginv(){return '<button class="tl" data-a="home">← الرئيسية</button><h2>مرحباً بعودتك '+esc(S.me.n)+'</h2><p class="lead">أدخل رمز التحقق لتسجيل الدخول إلى حسابك. (رمز التجربة: 1234)</p><div class="fld"><label for="lc">رمز التحقق</label><input type="number" id="lc" inputmode="numeric"></div>'+(S.vErr?'<p class="err">'+S.vErr+'</p>':'')+'<button class="btn" data-a="lgin">دخول</button><button class="tl" style="margin-top:1rem" data-a="newacct">إنشاء حساب جديد (يمسح بيانات هذا الجهاز)</button>'}
 function tbar(){return '<div class="tbar">'+((S.step==="res"&&mq())||'<span style="flex:1"></span>')+'<button data-a="lgt" class="lgi2" aria-label="Language">🌐</button>'+(S.reg?'':(S.lo?'<button data-a="login" class="lgi2 rg">🔑 دخول</button>':'<button data-a="reg" class="lgi2 rg">👤 تسجيل</button>'))+'</div>'}
 var _v3=view;view=function(){if(S.step==="login")return loginv();return _v3()};
-var CW="AF AL DZ AD AO AG AR AM AU AT AZ BS BH BD BB BY BE BZ BJ BT BO BA BW BR BN BG BF BI CV KH CM CA CF TD CL CN CO KM CG CD CR CI HR CU CY CZ DK DJ DM DO EC EG SV GQ ER EE SZ ET FJ FI FR GA GM GE DE GH GR GD GT GN GW GY HT HN HU IS IN ID IR IQ IE IL IT JM JP JO KZ KE KI KP KR KW KG LA LV LB LS LR LY LI LT LU MG MW MY MV ML MT MH MR MU MX FM MD MC MN ME MA MZ MM NA NR NP NL NZ NI NE NG MK NO OM PK PW PS PA PG PY PE PH PL PT QA RO RU RW KN LC VC WS SM ST SA SN RS SC SL SG SK SI SB SO ZA SS ES LK SD SR SE CH SY TW TJ TZ TH TL TG TO TT TN TR TM TV UG UA AE GB US UY UZ VU VA VE VN YE ZM ZW".split(" "),CWC={},CWN={};
+var CW="AF AL DZ AD AO AG AR AM AU AT AZ BS BH BD BB BY BE BZ BJ BT BO BA BW BR BN BG BF BI CV KH CM CA CF TD CL CN CO KM CG CD CR CI HR CU CY CZ DK DJ DM DO EC EG SV GQ ER EE SZ ET FJ FI FR GA GM GE DE GH GR GD GT GN GW GY HT HN HU IS IN ID IR IQ IE IT JM JP JO KZ KE KI KP KR KW KG LA LV LB LS LR LY LI LT LU MG MW MY MV ML MT MH MR MU MX FM MD MC MN ME MA MZ MM NA NR NP NL NZ NI NE NG MK NO OM PK PW PS PA PG PY PE PH PL PT QA RO RU RW KN LC VC WS SM ST SA SN RS SC SL SG SK SI SB SO ZA SS ES LK SD SR SE CH SY TW TJ TZ TH TL TG TO TT TN TR TM TV UG UA AE GB US UY UZ VU VA VE VN YE ZM ZW".split(" "),CWC={},CWN={};
 (function(){var dn=null;try{dn=new Intl.DisplayNames(["ar"],{type:"region"})}catch(e){}CW.forEach(function(c){var n=c==="AE"?"الإمارات":((dn&&dn.of(c))||c);CWC[n]=c;CWN[c]=n});CT=CW.map(function(c){return CWN[c]}).sort(function(a,b){return a.localeCompare(b,"ar")})})();
 function flg(c){var k=CWC[c];return k?String.fromCodePoint(127397+k.charCodeAt(0),127397+k.charCodeAt(1)):"🏳️"}
 function vb(p){return (p.on&&S.sub?'<span class="vb">● متصل</span>':'')+(p.nf?'<span class="vb">✔ موثّق عبر '+p.nf+'</span>':'')}
@@ -448,7 +460,7 @@ function card(p){var o=S.open===String(p.id),s=S.sent[p.id],h='<article class="c
   if(s){h+=stat(s,p.id)}else{h+='<label class="chk"><input type="checkbox" id="gd"><span>أشرك ولي أمري في التواصل</span></label><button class="btn" data-a="send" data-v="'+p.id+'">أرسل اهتمام</button>'}
   h+='</div>'}
  return h+'</article>'}
-function mylists(){function sec(t,a,e){return '<h2 style="font-size:1.05rem;margin:1rem 0 .4rem">'+t+' ('+a.length+')</h2>'+plist(a,e)}var L=S.list.filter(function(p){return !S.blk[p.id]}),f=function(k){return L.filter(k)};return '<h2>قائمتي</h2><div class="status" style="margin:0 0 .5rem">عملاتي: <b>'+S.pts+'</b></div>'+sec('من أعجب بي',f(function(p){return p.lk}),'لا أحد بعد.')+sec('من زرتهم',f(function(p){return S.vis[p.id]}),'لم تزر أحداً بعد.')+sec('من أعجبت أنا فيهم',f(function(p){return S.lik[p.id]}),'لم تُعجب بأحد بعد.')+sec('من زار ملفي',f(function(p){return p.vs}),'لا أحد بعد.')+sec('من أهداني',f(function(p){return p.gr}),'لم يهدِك أحد بعد.')+sec('من أهديته',f(function(p){return S.gv[p.n]}),'لم تُهدِ أحداً بعد.')+sec('من أضفته لدي',f(function(p){return S.fav[p.id]}),'قائمتك فاضية.')+sec('من أضافني',f(function(p){return p.ad}),'لا أحد بعد.')}
+function mylists(){function sec(t,a,e){return '<h2 style="font-size:1.05rem;margin:1rem 0 .4rem">'+t+' ('+a.length+')</h2>'+plist(a,e)}var L=S.list.filter(function(p){return !S.blk[p.id]}),f=function(k){return L.filter(k)};return '<h2>قائمتي</h2><div class="status" style="margin:0 0 .5rem">عملاتي: <b>'+S.pts+'</b></div>'+sec('من أعجب بي',f(function(p){return p.lk}),'لا أحد بعد.')+sec('من زرتهم',f(function(p){return S.vis[p.id]}),'لم تزر أحداً بعد.')+sec('من أعجبت أنا فيهم',f(function(p){return S.lik[p.id]}),'لم تُعجب بأحد بعد.')+sec('من زار ملفي',f(function(p){return p.vs}),'لا أحد بعد.')+sec('من أضفته لدي',f(function(p){return S.fav[p.id]}),'قائمتك فاضية.')+sec('من أضافني',f(function(p){return p.ad}),'لا أحد بعد.')}
 function mylistsA(){var L=S.list.filter(function(p){return !S.blk[p.id]});return '<h2>قائمتي</h2>'+plist(L.filter(function(p){return S.fav[p.id]}),'قائمتك فاضية.')+'<h2 style="margin-top:1.25rem">معجب بهم</h2>'+plist(L.filter(function(p){return S.lik[p.id]}),'ما أعجبت بأحد بعد.')}
 filt=function(){return '<div class="send" style="margin-bottom:1rem"><input type="text" id="q" placeholder="ابحث بالاسم أو الدولة أو العمر (مثال: مصر أو 25-30)" value="'+esc(S.q)+'"><button class="btn" data-a="search">بحث</button></div><div class="send" style="margin-bottom:1rem"><input type="number" data-f="amin" placeholder="من عمر" value="'+esc(S.amin)+'"><input type="number" data-f="amax" placeholder="إلى عمر" value="'+esc(S.amax)+'"></div><div class="fld"><label for="tc2">الدولة (كل دول العالم)</label><select id="tc2" data-f="tc"><option value="">أي دولة</option>'+opts(CT,S.me.tc)+'</select></div><div class="fld"><label for="fc">المدينة (كتابة، اختياري)</label><input type="text" id="fc" data-f="fc" placeholder="اكتب اسم المدينة إن أردت" value="'+esc(S.fc)+'"></div><div class="fld"><label for="fr">الديانة</label><select id="fr" data-f="fr"><option value="">الكل</option>'+opts(RT,S.fr)+'</select></div>'+(S.sub?ck("fv","الموثّقين فقط",S.fv):'')};
 NI.r='<circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M19 8v6M16 11h6"/>';
@@ -494,7 +506,7 @@ function card(p){var o=S.open===String(p.id),s=S.sent[p.id],h='<article class="c
   h+='</div>'}
  return h+'</article>'}
 function stat(s,id){return s.st==="m"?'<div class="status m">رد بالموافقة — تطابق متبادل. '+(s.g?'ولي أمرك يتابع المحادثة.':'تقدرون تبدأون المحادثة.')+'</div><div style="padding:0 1rem 1rem"><button class="btn" data-a="chat" data-v="'+id+'">افتح المحادثة</button></div>':'<div class="status">تم إرسال الاهتمام. بانتظار الرد.</div>'}
-function mylists(){function sec(t,a,e){return '<h2 style="font-size:1.05rem;margin:1rem 0 .4rem">'+t+' ('+a.length+')</h2>'+plist(a,e)}var L=S.list.concat(Object.keys(GEN).map(function(k){return GEN[k]})).filter(function(p){return !S.blk[p.id]}),f=function(k){return L.filter(k)};return '<h2>قائمتي</h2>'+sec('من زرتهم',f(function(p){return S.vis[p.id]}),'لم تزر أحداً بعد.')+sec('من أهديته',f(function(p){return S.gv[p.n]}),'لم تُهدِ أحداً بعد.')+sec('من أعجبت فيهم',f(function(p){return S.lik[p.id]}),'لم تُعجب بأحد بعد.')+sec('من تواصلت معه',f(function(p){return S.ct[p.id]||S.sent[p.id]}),'لم تتواصل مع أحد بعد.')+sec('من حطيته في المفضلة',f(function(p){return S.fav[p.id]}),'قائمة المفضلة فاضية.')}
+function mylists(){function sec(t,a,e){return '<h2 style="font-size:1.05rem;margin:1rem 0 .4rem">'+t+' ('+a.length+')</h2>'+plist(a,e)}var L=S.list.concat(Object.keys(GEN).map(function(k){return GEN[k]})).filter(function(p){return !S.blk[p.id]}),f=function(k){return L.filter(k)};return '<h2>قائمتي</h2>'+sec('من زرتهم',f(function(p){return S.vis[p.id]}),'لم تزر أحداً بعد.')+sec('من أعجبت فيهم',f(function(p){return S.lik[p.id]}),'لم تُعجب بأحد بعد.')+sec('من تواصلت معه',f(function(p){return S.ct[p.id]||S.sent[p.id]}),'لم تتواصل مع أحد بعد.')+sec('من حطيته في المفضلة',f(function(p){return S.fav[p.id]}),'قائمة المفضلة فاضية.')}
 var _bk0=blocked;blocked=function(t){return _bk0(t)||/(https?:|www\.|\w\.(net|org|sa|me|io|ly|tv|co)\b|t\.me|wa\.me|bit\.ly)/i.test(t)};
 var _v6=view;view=function(){var r=_v6();if(S.step==="plans")r=r.replace("الرجال: المراسلة ورؤية التفاصيل الكاملة بالاشتراك (شهري، ربع سنوي، سنوي).","الرجال: التسجيل والتصفح والمراسلة مجانية بدون وسائل تواصل خارجية، والاشتراك (شهري، ربع سنوي، سنوي) يفتح مشاركة وسائل التواصل والمزايا الإضافية.")+"";if(S.step==="profile")r=r.replace('<label class="chk"><input type="checkbox" data-f="consent"','<button class="btn ghost" style="margin-bottom:1rem" data-a="lgt">🌐 اختر لغتك</button><label class="chk"><input type="checkbox" data-f="consent"');return r};
 P.forEach(function(p){p.rq=[3,6,10,13,17].indexOf(p.id)>-1;p.nl="العربية";p.tr=({1:"قحطاني",4:"عتيبي",6:"الحربي"})[p.id]||""});
@@ -529,7 +541,7 @@ subh=function(){var sb=S.list.filter(function(p){return p.sb&&!S.blk[p.id]}).sli
 var _vv0=verv;verv=function(){var k=S.me.k;S.me.k=S.me.rc||k;var r=_vv0();S.me.k=k;return r};
 var _v7=view;view=function(){if(S.step==="owner")return ownv();if(S.step==="profile")return profv();if(S.step==="login")return loginv()+'<button class="tl" data-a="ownp">🛠 لوحة تحكم المالك</button>';return _v7()};
 function quick(){var G=[["الاستكشاف",[["q","🔍","البحث"],["u","✨","الاقتراحات"],["y","🤖","الباحث الآلي"],["b","📖","قصص النجاح"]]],["قوائمي",[["l","⭐","المفضلة"],["k","💖","المعجبون بي"],["v","👁️","الزوار"],["t","💌","الرسائل والتطابقات"]]],["المزيد",[["i","📨","دعوة الأصدقاء"],["n","🪙","عملاتي"],["z","⚙️","الإعدادات"]]]];return '<div class="qk">'+[['k','💖','المعجبون بي','tab'],['l','⭐','المفضلة','tab'],['v','👁️','الزوار','tab'],['sr','🔍','البحث','sr'],['mn','☰','القائمة','mn']].map(function(x){return '<button data-a="'+x[3]+'" data-v="'+x[0]+'"><span style="font-size:1.4rem">'+x[1]+'</span><span>'+x[2]+'</span></button>'}).join('')+'</div>'+(S.mnu?G.map(function(g){return '<p class="priv" style="margin:.8rem 0 .3rem">'+g[0]+'</p><div class="sl">'+g[1].map(function(r){return '<button data-a="tab" data-v="'+r[0]+'"><span>'+r[1]+' '+r[2]+'</span><span aria-hidden="true">›</span></button>'}).join('')+'</div>'}).join(''):'')}
-function mylists(){function sec(t,a,e){return '<h2 style="font-size:1.05rem;margin:1rem 0 .4rem">'+t+' ('+a.length+')</h2>'+plist(a,e)}var A=allp(),L=A.filter(function(p){return !S.blk[p.id]}),f=function(k){return L.filter(k)};return '<h2>المفضلة</h2>'+sec('أعجبت فيهم',f(function(p){return S.lik[p.id]}),'لم تُعجب بأحد بعد.')+sec('أهديتهم',f(function(p){return S.gv[p.n]}),'لم تُهدِ أحداً بعد.')+sec('زرتهم',f(function(p){return S.vis[p.id]}),'لم تزر أحداً بعد.')+sec('تواصلت معهم',f(function(p){return S.ct[p.id]||S.sent[p.id]}),'لم تتواصل مع أحد بعد.')+sec('المفضلة',f(function(p){return S.fav[p.id]}),'قائمة المفضلة فاضية.')+sec('حظرتهم',A.filter(function(p){return S.blk[p.id]}),'لم تحظر أحداً.')}
+function mylists(){function sec(t,a,e){return '<h2 style="font-size:1.05rem;margin:1rem 0 .4rem">'+t+' ('+a.length+')</h2>'+plist(a,e)}var A=allp(),L=A.filter(function(p){return !S.blk[p.id]}),f=function(k){return L.filter(k)};return '<h2>المفضلة</h2>'+sec('أعجبت فيهم',f(function(p){return S.lik[p.id]}),'لم تُعجب بأحد بعد.')+sec('زرتهم',f(function(p){return S.vis[p.id]}),'لم تزر أحداً بعد.')+sec('تواصلت معهم',f(function(p){return S.ct[p.id]||S.sent[p.id]}),'لم تتواصل مع أحد بعد.')+sec('المفضلة',f(function(p){return S.fav[p.id]}),'قائمة المفضلة فاضية.')+sec('حظرتهم',A.filter(function(p){return S.blk[p.id]}),'لم تحظر أحداً.')}
 function mylistsA(){var L=allp().filter(function(p){return !S.blk[p.id]});return '<h2>المفضلة</h2>'+plist(L.filter(function(p){return S.fav[p.id]}),'قائمة المفضلة فاضية.')+'<h2 style="margin-top:1.25rem">أعجبت فيهم</h2>'+plist(L.filter(function(p){return S.lik[p.id]}),'ما أعجبت بأحد بعد.')}
 SM[3][1][0][3]="المفضلة";
 var _my1=myp;myp=function(){return '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem"><h2 style="margin:0">حسابي</h2><button class="lgi2" data-a="tab" data-v="z" aria-label="الإعدادات">⚙️</button></div>'+_my1()};
@@ -907,8 +919,18 @@ var _nv8=navh;navh=function(){var r=_nv8(),n=unreadN();return n?r.replace('ال�
   /* ---- دخول المالك عبر Supabase: لا يوجد رمز محفوظ على الجهاز ---- */
   var ADM=null;
   ohas=function(){return true};
+  function loadStats(){if(!ADM)return;S.dbst=S.dbst||{};S.dbst.loading=true;draw();ADM.rpc("admin_stats").then(function(r){S.dbst=r.error?{err:1}:r.data;draw()})}
+  function n(x){return (x||0).toLocaleString("ar-EG")}
+  function box(ic,lb,v,sub){return '<div style="background:var(--soft);border-radius:14px;padding:.75rem .6rem;text-align:center"><div style="font-size:1.3rem" aria-hidden="true">'+ic+'</div><div style="font-size:1.6rem;font-weight:700;color:var(--brand);line-height:1.2">'+v+'</div><div style="font-size:.85rem;color:var(--ink)">'+lb+'</div>'+(sub?'<div style="font-size:.75rem;color:var(--mute)">'+sub+'</div>':'')+'</div>'}
+  function statsCard(){var d=S.dbst||{};if(d.err)return '<p class="err">تعذّر جلب الإحصائيات.</p>';
+    return '<div class="wz-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem"><h3 style="margin:0;font-size:1.05rem">📊 إحصائيات حقيقية</h3><button class="tl" style="margin:0" data-a="sbst">'+(d.loading?'جاري التحديث…':'↻ تحديث')+'</button></div><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem">'
+    +box("👥","الأعضاء المسجلون",n(d.members),"جدد اليوم: "+n(d.members_today))
+    +box("👀","الزوار",n(d.visitors),"اليوم: "+n(d.visitors_today))
+    +box("🚩","بلاغات جديدة",n(d.reports_new),"")
+    +box("🪙","دعوات ناجحة",n(d.referrals),"")
+    +'</div><p class="note" style="margin:.7rem 0 0">الزوار = كل من فتح التطبيق، ومنهم الأعضاء المسجلون.</p></div>'}
   ownv=(function(orig){return function(){
-    if(S.own)return orig();
+    if(S.own)return orig().replace('<h2>لوحة تحكم المالك</h2>','<h2>لوحة تحكم المالك</h2>'+statsCard());
     var er=S.vErr?'<p class="err">'+esc(S.vErr)+'</p>':'';
     if(!ADM)return '<h2>لوحة تحكم المالك</h2><p class="lead">الربط بقاعدة البيانات غير مُعدّ بعد، لذلك دخول المالك مغلق.</p>';
     return '<h2>لوحة تحكم المالك</h2><p class="lead">سجّل الدخول بحساب المالك.</p><div class="fld"><label for="oe">البريد الإلكتروني</label><input type="email" id="oe" autocomplete="username" dir="ltr"></div><div class="fld"><label for="op">كلمة المرور</label><input type="password" id="op" autocomplete="current-password" dir="ltr"></div>'+er+'<button class="btn" data-a="sbin">دخول</button>';
@@ -919,6 +941,7 @@ var _nv8=navh;navh=function(){var r=_nv8(),n=unreadN();return n?r.replace('ال�
   app.addEventListener("click",function(e){
     var b=e.target.closest("[data-a]");if(!b)return;var a=b.dataset.a;
     if(a==="ownout"&&ADM){ADM.auth.signOut();S.dbs="";return}
+    if(a==="sbst"){e.stopImmediatePropagation();loadStats();return}
     if(a!=="sbin"&&a!=="sbchg")return;
     e.stopImmediatePropagation();if(!ADM)return;
     if(a==="sbin"){
@@ -930,8 +953,8 @@ var _nv8=navh;navh=function(){var r=_nv8(),n=unreadN();return n?r.replace('ال�
       }).then(function(r){
         if(r.error||r.data!==true){ADM.auth.signOut();throw new Error("هذا الحساب ليس حساب المالك.")}
         S.own=true;S.vErr="";S.cpm="";draw();
-        return Promise.all([ADM.from("profiles").select("id",{count:"exact",head:true}),ADM.from("reports").select("id",{count:"exact",head:true}).eq("status","new")]);
-      }).then(function(x){if(x){S.dbs="الأعضاء المسجلون "+(x[0].count||0)+" — بلاغات جديدة "+(x[1].count||0);draw()}})
+        loadStats();
+      })
       .catch(function(err){S.vErr=err.message||"تعذّر الدخول.";draw()});
     } else {
       var p1=(document.getElementById("cp1")||{}).value||"",p2=(document.getElementById("cp2")||{}).value||"";
@@ -954,15 +977,163 @@ var _nv8=navh;navh=function(){var r=_nv8(),n=unreadN();return n?r.replace('ال�
     if(!uid||!S.reg||!S.me)return;
     var m=S.me;
     db.from("profiles").upsert({id:uid,name:m.n||null,gender:m.g||null,birth_date:m.bd||null,
-      plan:S.plan||"free",points:S.pts||0,oath:!!S.oath,data:m},{onConflict:"id"})
-      .then(function(r){if(r.error)console.error("SAKANOVA profile:",r.error.message)});
+      oath:!!S.oath,data:m},{onConflict:"id"})
+      .then(function(r){if(r.error){console.error("SAKANOVA profile:",r.error.message);return}afterSave()});
     var rep=S.rep||[];
     for(;sentRep<rep.length;sentRep++){var x=rep[sentRep];if(x.by!==m.n)continue;
       db.from("reports").insert({reported:String(x.id),reason:x.why,details:x.d})
         .then(function(r){if(r.error)console.error("SAKANOVA report:",r.error.message)});}
   }
+  /* ---- الدعوات والعملات ---- */
+  function afterSave(){
+    var code=null;try{code=localStorage.getItem("sk_ref")}catch(e){}
+    var p=code?db.rpc("claim_referral",{code:code}).then(function(r){if(!r.error&&r.data!=="not_registered"){try{localStorage.removeItem("sk_ref")}catch(e){}}}):Promise.resolve();
+    p.then(loadMine);
+  }
+  function loadMine(){db.from("profiles").select("ref_code,coins").eq("id",uid).maybeSingle().then(function(r){if(r.data){var ch=S.myRef!==r.data.ref_code||S.coins!==r.data.coins;S.myRef=r.data.ref_code;S.coins=r.data.coins;if(ch&&S.tab==="i")draw()}})}
+  window.SK_LOAD_MINE=function(){if(uid)loadMine()};
+  window.SKDB={db:db,uid:function(){return uid}};
   var _sv=sv;sv=function(){_sv();clearTimeout(timer);timer=setTimeout(push,1500)};
 })();
+/*LOGO*/
+var LOGO=function(sz){return '<svg width="'+sz+'" height="'+Math.round(sz*1.1)+'" viewBox="0 0 200 220" aria-hidden="true" style="flex:none"><path d="M30 206 V100 A70 70 0 0 1 170 100 V206" fill="none" style="stroke:var(--brand)" stroke-width="12" stroke-linecap="round"/><path d="M100 66 C104 98 112 106 142 112 C112 118 104 126 100 158 C96 126 88 118 58 112 C88 106 96 98 100 66 Z" style="fill:var(--accent)"/><circle cx="132" cy="76" r="6" style="fill:var(--mute)"/><path d="M14 206 H186" style="stroke:var(--brand)" stroke-width="8" stroke-linecap="round"/></svg>'};
+(function(){var st=document.createElement("style");st.textContent='.brandbar{display:flex;align-items:center;gap:.55rem;margin:0 0 .6rem}.brandbar b{font-size:1.35rem;color:var(--ink);line-height:1}.brandbar span{font-size:.72rem;letter-spacing:.32em;color:var(--brand);font-weight:700}.mark.lg{display:flex;align-items:center;gap:.7rem}.mark.lg b{font-size:2rem;color:var(--ink)}';document.head.appendChild(st)})();
+tbar=(function(o){return function(){return '<div class="brandbar">'+LOGO(34)+'<b>سكنوفا</b><span dir="ltr">SAKANOVA</span></div>'+o()}})(tbar);
+view=(function(o){return function(){return o().replace('<p class="mark">SAKANOVA · سكنوفا</p>','<div class="mark lg">'+LOGO(64)+'<div><b>سكنوفا</b><div dir="ltr" style="letter-spacing:.3em;font-size:.85rem">SAKANOVA</div></div></div>')}})(view);
+applyTh=(function(o){return function(){o();try{var cs=getComputedStyle(document.documentElement),g=function(n){return cs.getPropertyValue(n).trim()},bg=g("--bg"),br=g("--brand"),ac=g("--accent");var s='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><rect width="240" height="240" rx="52" fill="'+bg+'"/><g transform="translate(20 10)"><path d="M30 206 V100 A70 70 0 0 1 170 100 V206" fill="none" stroke="'+br+'" stroke-width="14" stroke-linecap="round"/><path d="M100 66 C104 98 112 106 142 112 C112 118 104 126 100 158 C96 126 88 118 58 112 C88 106 96 98 100 66 Z" fill="'+ac+'"/></g></svg>';var l=document.getElementById("favi");if(!l){l=document.createElement("link");l.id="favi";l.rel="icon";document.head.appendChild(l)}l.href="data:image/svg+xml,"+encodeURIComponent(s)}catch(e){}}})(applyTh);
+/*WIZARD*/
+(function(){var st=document.createElement("style");st.textContent='.wz-h{display:flex;align-items:center;gap:.8rem;margin:.2rem 0 1rem}.wz-h h2{margin:0;font-size:1.3rem}.wz-h p{margin:.15rem 0 0;color:var(--mute);font-size:.88rem}.wz-steps{display:flex;gap:.35rem;margin:0 0 .45rem}.wz-steps i{flex:1;height:7px;border-radius:99px;background:var(--line);transition:background .3s}.wz-steps i.on{background:var(--brand)}.wz-cnt{font-size:.82rem;color:var(--mute);margin:0 0 1rem;display:flex;justify-content:space-between}.wz-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.1rem 1rem 1rem;margin-bottom:1rem;box-shadow:0 6px 24px rgba(0,0,0,.08)}.wz-card h3{margin:0 0 .2rem;font-size:1.15rem;color:var(--ink)}.wz-card .sub{margin:0 0 1rem;color:var(--mute);font-size:.88rem}.wz-nav{display:flex;gap:.6rem;margin-bottom:1.2rem}.wz-nav .btn{flex:1;margin:0}.wz-ic{width:46px;height:46px;border-radius:14px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex:none}';document.head.appendChild(st)})();
+var WZ=[["👤","البيانات الأساسية","دقيقة واحدة فقط، وتكمل بقية ملفك لاحقًا"],["✅","التأكيد والموافقة","خطوة أخيرة قبل التحقق من حسابك"]];
+function wzHead(){var n=WZ.length,i=S.rs||0,b='';for(var j=0;j<n;j++)b+='<i class="'+(j<=i?'on':'')+'"></i>';
+ return '<button class="tl" data-a="home">← الرئيسية</button><div class="wz-h">'+LOGO(44)+'<div><h2>أهلاً بك في سكنوفا</h2><p>أنشئ ملفك خطوة بخطوة، ويمكنك تعديله لاحقًا</p></div></div><div class="wz-steps" aria-hidden="true">'+b+'</div><p class="wz-cnt"><span>الخطوة '+(i+1).toLocaleString("ar-EG")+' من '+n.toLocaleString("ar-EG")+'</span><span>'+Math.round((i+1)/n*100).toLocaleString("ar-EG")+'٪</span></p>'}
+profv=(function(orig){return function(){
+ var i=S.rs||0,cap=[],od=dts;dts=function(t,h){cap.push(h);return ''};
+ var rest;try{if(i<1)pflds2("p",true);else rest=orig()}finally{dts=od}
+ var w=WZ[i],h=wzHead();
+ if(i<1){
+  h+='<div class="wz-card"><div style="display:flex;gap:.7rem;align-items:center;margin-bottom:.8rem"><span class="wz-ic" aria-hidden="true">'+w[0]+'</span><div><h3>'+w[1]+'</h3><p class="sub" style="margin:0">'+w[2]+'</p></div></div>'+(i===0?'<p class="note" style="margin:0 0 .9rem">🔒 لا نعرض جوالك أو هويتك لأي عضو، وبياناتك الحساسة اختيارية.</p>':'')+(cap[i]||'')+'</div>';
+  if(S.wzErr)h+='<p class="err">'+S.wzErr+'</p>';
+  h+='<div class="wz-nav">'+(i>0?'<button class="btn ghost" data-a="wzp">السابق</button>':'')+'<button class="btn" data-a="wzn">'+'التالي'+'</button></div>';
+  return h}
+ rest=rest.replace(/^[\s\S]*?<h2>عرّفنا على نفسك<\/h2>/,'');
+ return h+'<div class="wz-card"><div style="display:flex;gap:.7rem;align-items:center;margin-bottom:.8rem"><span class="wz-ic" aria-hidden="true">'+w[0]+'</span><div><h3>'+w[1]+'</h3><p class="sub" style="margin:0">'+w[2]+'</p></div></div>'+rest+'</div><div class="wz-nav"><button class="btn ghost" data-a="wzp">السابق</button></div>';
+}})(profv);
+app.addEventListener("click",function(e){var b=e.target.closest("[data-a]");if(!b)return;var a=b.dataset.a;if(a!=="wzn"&&a!=="wzp")return;e.stopImmediatePropagation();
+ var i=S.rs||0,m=S.me;S.wzErr="";
+ if(a==="wzp"){S.rs=Math.max(0,i-1)}
+ else{if(i===0){var ag=agef(m.bd);if(!(m.n||"").trim())S.wzErr="اكتب اسمك الأول أو اسمًا مستعارًا.";else if(!m.g)S.wzErr="اختر الجنس.";else if(!(ag>=18&&ag<=80))S.wzErr="أدخل تاريخ ميلادك، والعمر المسموح من ١٨ إلى ٨٠ سنة."}
+  if(!S.wzErr)S.rs=Math.min(WZ.length-1,i+1)}
+ draw();window.scrollTo(0,0)},true);
+/*COMPLETE*/
+pcomp=(function(o){return function(){var m=S.me,f=[m.n,m.g,m.bd,m.k,m.c,m.ed,m.mj,m.jb,m.wn,m.dl,m.ht,m.wt,m.sk,m.ey,m.hb&&m.hb.length?1:"",m.ab,m.pa1,m.pa2,m.lf,S.pics.length?1:""];return Math.round(f.filter(function(x){return x}).length/f.length*100)}})(pcomp);
+function pcDue(){try{return localStorage.getItem("sk_pc")!==new Date().toDateString()}catch(e){return true}}
+view=(function(o){return function(){var r=o();if(S.reg&&S.step==="res"&&S.tab==="m"&&S.role!=="admin"&&pcomp()<80&&pcDue()){var c=pcomp();r='<div class="wz-card" style="border-color:var(--brand)"><div style="display:flex;gap:.7rem;align-items:center"><span class="wz-ic" aria-hidden="true">📝</span><div style="flex:1"><h3 style="font-size:1rem">أكمل ملفك يا '+esc(S.me.n||"")+'</h3><p class="sub" style="margin:.2rem 0 0">ملفك مكتمل '+c.toLocaleString("ar-EG")+'٪ فقط. الملفات المكتملة تظهر أكثر وتحصل على تطابق أدق.</p></div></div><div class="bar" style="margin:.8rem 0"><i style="width:'+c+'%"></i></div><div class="wz-nav" style="margin:0"><button class="btn" data-a="eacct">أكمل ملفي الآن</button><button class="btn ghost" data-a="pclater">لاحقًا</button></div></div>'+r}return r}})(view);
+app.addEventListener("click",function(e){var b=e.target.closest("[data-a]");if(!b||b.dataset.a!=="pclater")return;e.stopImmediatePropagation();try{localStorage.setItem("sk_pc",new Date().toDateString())}catch(x){}draw()},true);
+/*REFERRAL*/
+(function(){try{var q=new URLSearchParams(location.search).get("ref");if(q&&/^[A-Za-z0-9]{6,12}$/.test(q)){localStorage.setItem("sk_ref",q.toUpperCase());history.replaceState(null,"",location.pathname)}}catch(e){}})();
+var BASE="https://abuwafa6540.github.io/sakanova/";
+function myLink(){return S.myRef?BASE+"?ref="+S.myRef:BASE}
+doCopy=function(){var t=myLink();try{navigator.clipboard.writeText(t).then(function(){S.iMsg="تم نسخ رابطك.";draw()},function(){S.iMsg="تعذر النسخ. انسخ الرابط يدوياً.";draw()})}catch(e){S.iMsg="تعذر النسخ. انسخ الرابط يدوياً.";draw()}};
+doShare=function(){var t="سجّل في سكنوفا SAKANOVA للتعارف الجاد: "+myLink();if(navigator.share){navigator.share({title:"SAKANOVA",text:t}).catch(function(){})}else{doCopy()}};
+invite=(function(o){return function(){if(window.SK_LOAD_MINE)window.SK_LOAD_MINE();var h=o(),L=myLink();
+ h=h.split(encodeURIComponent(BASE)).join(encodeURIComponent(L)).split(BASE).join(L);
+ h=h.replace('ادعُ أصدقاءك للانضمام. عن كل صديق يسجّل تحصل على ٣ أيام من الباقة الفضية مجاناً.','ادعُ أصدقاءك برابطك الخاص. عن كل شخص جديد يسجّل من رابطك تحصل تلقائيًا على <b>عملة</b> 🪙');
+ h=h.replace('رابطك (تجريبي):','رابطك الخاص:');
+ return '<div class="wz-card" style="text-align:center"><p class="sub" style="margin:0">رصيدك من العملات</p><p style="margin:.2rem 0 0;font-size:2rem;font-weight:700;color:var(--brand)">🪙 '+((S.coins||0).toLocaleString("ar-EG"))+'</p>'+(S.myRef?'':'<p class="note" style="margin:.4rem 0 0">يُجهَّز رابطك الخاص بعد حفظ ملفك…</p>')+'</div>'+h}})(invite);
+/*REALMEMBERS*/
+(function(){
+var PH={},PHP={};
+function D(){return window.SKDB&&window.SKDB.uid()?window.SKDB:null}
+function N(x){return (x==null?"":x).toLocaleString("ar-EG")}
+function sign(paths){var k=D();if(!k)return;var need=paths.filter(function(p){return p&&!PH[p]&&!PHP[p]});if(!need.length)return;need.forEach(function(p){PHP[p]=1});
+ k.db.storage.from("photos").createSignedUrls(need,3600).then(function(r){(r.data||[]).forEach(function(x){if(x.signedUrl)PH[x.path]=x.signedUrl});draw()})}
+function av(m,sz){var ph=m.photos&&m.photos[0];if(ph){sign([ph]);if(PH[ph])return '<img src="'+PH[ph]+'" alt="" style="width:'+sz+'px;height:'+sz+'px;border-radius:14px;object-fit:cover;flex:none">'}
+ return '<span aria-hidden="true" style="width:'+sz+'px;height:'+sz+'px;border-radius:14px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:'+Math.round(sz/2.4)+'px;font-weight:700;color:var(--brand);flex:none">'+(m.has_photo?'🔒':esc((m.name||"؟").charAt(0)))+'</span>'}
+function err(e){var s=(e&&e.message)||"";return s.indexOf("contact_blocked")>-1?"ممنوع إرسال الأرقام أو البريد في الرسائل. استخدم «طلب تواصل».":"تعذّر التنفيذ، حاول مرة أخرى."}
+/* ---------- تحميل البيانات ---------- */
+function loadMembers(force){var k=D();if(!k||S.rmL||(!force&&S.rmT&&Date.now()-S.rmT<60000))return;S.rmL=1;
+ k.db.rpc("browse_members",{p_limit:60,p_offset:0}).then(function(r){S.rmL=0;S.rmT=Date.now();S.rm=r.data||[];draw()})}
+function loadInbox(){var k=D();if(!k||S.ibL)return;S.ibL=1;k.db.rpc("my_inbox").then(function(r){S.ibL=0;S.ibT=Date.now();if(r.data){var o=JSON.stringify(S.ibx);S.ibx=r.data;if(o!==JSON.stringify(S.ibx))draw()}})}
+function openMember(id){var k=D();if(!k)return;S.rmPrev=S.step;S.step="rmv";S.rmv=null;S.rmMsg="";S.rmLiked=false;draw();window.scrollTo(0,0);
+ Promise.all([k.db.rpc("get_member",{p_id:id}),k.db.from("likes").select("liked").eq("liker",k.uid()).eq("liked",id),k.db.from("contact_requests").select("id,status,from_user").or("from_user.eq."+id+",to_user.eq."+id)]).then(function(x){
+  S.rmv=x[0].data;S.rmLiked=!!(x[1].data&&x[1].data.length);S.rmCr=(x[2].data||[])[0]||null;draw()})}
+function loadChat(mark){var k=D(),o=S.rmc;if(!k||!o)return;var me=k.uid();
+ k.db.from("messages").select("id,sender,body,created_at").or("and(sender.eq."+me+",receiver.eq."+o.id+"),and(sender.eq."+o.id+",receiver.eq."+me+")").order("created_at",{ascending:true}).limit(200).then(function(r){
+  var n=r.data||[],ch=JSON.stringify(n)!==JSON.stringify(S.rmsgs);S.rmsgs=n;if(ch){draw();window.scrollTo(0,document.body.scrollHeight)}
+  if(n.some(function(m){return m.sender===o.id}))k.db.from("messages").update({read_at:new Date().toISOString()}).eq("sender",o.id).eq("receiver",me).is("read_at",null).then(function(){})})}
+function loadMyPhotos(){var k=D();if(!k||S.myPhL)return;S.myPhL=1;k.db.from("profiles").select("photos,photo_public").eq("id",k.uid()).maybeSingle().then(function(r){S.myPhL=0;if(r.data){S.myPh=r.data.photos||[];S.myPub=r.data.photo_public;sign(S.myPh);draw()}})}
+/* ---------- الواجهات ---------- */
+function membersCard(){var L=S.rm;loadMembers();
+ var h='<div class="wz-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem"><h3 style="margin:0;font-size:1.05rem">👥 الأعضاء المسجلون فعليًا</h3><button class="tl" style="margin:0" data-a="rmref">↻</button></div>';
+ if(!L)return h+'<p class="note" style="margin:0">جاري التحميل…</p></div>';
+ if(!L.length)return h+'<p class="note" style="margin:0">لا يوجد أعضاء آخرون بعد. ادعُ أصدقاءك من صفحة «دعوة صديق».</p></div>';
+ return h+'<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem">'+L.slice(0,30).map(function(m){
+  return '<button data-a="rmo" data-v="'+m.id+'" style="background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:.55rem .3rem;display:flex;flex-direction:column;align-items:center;gap:.3rem;color:var(--ink);cursor:pointer;min-height:44px">'+av(m,58)+'<b style="font-size:.85rem">'+esc(m.name||"")+(m.age?'، '+N(m.age):'')+'</b><small style="color:var(--mute);font-size:.72rem">'+esc(m.rc||m.k||"")+'</small></button>'}).join("")+'</div></div>'}
+function row(l,v){return v?'<li><span>'+l+'</span><span>'+esc(v)+'</span></li>':''}
+function memberView(){var m=S.rmv,h='<button class="tl" data-a="rmback">← رجوع</button>';
+ if(!m)return h+'<p class="note">جاري التحميل…</p>';
+ var me=D()&&D().uid(),cr=S.rmCr,crTxt=!cr?'📞 طلب تواصل':(cr.status==="accepted"?'✅ تم قبول التواصل':(cr.status==="rejected"?'تم رفض الطلب':(cr.from_user===me?'⏳ بانتظار الرد':'📩 أرسل لك طلب تواصل')));
+ h+='<div class="wz-card" style="text-align:center">'+(m.photos&&m.photos.length?'<div style="display:flex;gap:.5rem;overflow-x:auto;justify-content:center;margin-bottom:.7rem">'+m.photos.map(function(p){sign([p]);return PH[p]?'<img src="'+PH[p]+'" alt="صورة '+esc(m.name)+'" style="width:150px;height:190px;object-fit:cover;border-radius:16px;flex:none">':''}).join("")+'</div>':'<div style="display:flex;justify-content:center;margin-bottom:.7rem">'+av(m,96)+'</div>'+(m.has_photo?'<p class="note" style="margin:0 0 .6rem">🔒 الصور تظهر بعد قبول طلب التواصل</p>':''))
+ +'<h2 style="margin:.2rem 0">'+esc(m.name||"")+(m.age?'، '+N(m.age):'')+'</h2><p class="note" style="margin:0">'+esc([m.k,m.rc&&m.rc!==m.k?"مقيم في "+m.rc:"",m.c].filter(Boolean).join(" • "))+'</p></div>';
+ h+='<div class="wz-card"><ul class="cmp">'+row("الحالة الاجتماعية",m.ms)+row("التعليم",m.ed)+row("المهنة",m.jb)+'</ul>'+(m.ab?'<h3 style="font-size:1rem;margin:.8rem 0 .3rem">نبذة</h3><p style="margin:0">'+esc(m.ab)+'</p>':'')+(m.lf?'<h3 style="font-size:1rem;margin:.8rem 0 .3rem">يبحث عن</h3><p style="margin:0">'+esc(m.lf)+'</p>':'')+'</div>';
+ if(m.id!==me){h+='<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin-bottom:.8rem"><button class="btn'+(S.rmLiked?'':' ghost')+'" data-a="rlike">'+(S.rmLiked?'❤️ أعجبني':'🤍 إعجاب')+'</button><button class="btn" data-a="rmsg">✉️ مراسلة</button><button class="btn ghost" data-a="rcr"'+(cr?' disabled':'')+'>'+crTxt+'</button><button class="btn ghost" data-a="rrep">🚩 إبلاغ</button></div>';
+  if(S.rmRep)h+='<div class="wz-card"><div class="fld"><label for="rrr">سبب البلاغ</label><select id="rrr">'+ov(RSN,"")+'</select></div><div class="fld"><label for="rrd">تفاصيل (اختياري)</label><input type="text" id="rrd" maxlength="200"></div><button class="btn" data-a="rrsend">إرسال البلاغ</button></div>'}
+ if(S.rmMsg)h+='<div class="status" style="margin:0 0 1rem">'+esc(S.rmMsg)+'</div>';
+ return h}
+function chatView(){var o=S.rmc,me=D()&&D().uid(),L=S.rmsgs||[];
+ var h='<button class="tl" data-a="rcback">← رجوع</button><div style="display:flex;align-items:center;gap:.6rem;margin:.3rem 0 .8rem"><h2 style="margin:0;font-size:1.2rem">'+esc(o.name||"")+'</h2></div><div class="wz-card" style="min-height:40vh;display:flex;flex-direction:column;gap:.45rem">';
+ h+=L.length?L.map(function(m){var mine=m.sender===me;return '<div style="align-self:'+(mine?'flex-start':'flex-end')+';max-width:80%;background:'+(mine?'var(--brand)':'var(--soft)')+';color:'+(mine?'var(--on-brand)':'var(--ink)')+';padding:.5rem .75rem;border-radius:16px;white-space:pre-wrap;word-break:break-word">'+esc(m.body)+'<div style="font-size:.68rem;opacity:.75;margin-top:.15rem">'+new Date(m.created_at).toLocaleTimeString("ar-EG",{hour:"2-digit",minute:"2-digit"})+'</div></div>'}).join(""):'<p class="note" style="margin:auto;text-align:center">ابدأ المحادثة باحترام 🌹<br>الأرقام والبريد ممنوعة هنا، استخدم «طلب تواصل».</p>';
+ h+='</div>'+(S.rmMsg?'<p class="err">'+esc(S.rmMsg)+'</p>':'')+'<div class="send"><input type="text" id="msg" maxlength="1000" placeholder="اكتب رسالتك…" aria-label="الرسالة"><button class="btn" data-a="rsend">إرسال</button></div>';
+ return h}
+function inboxCard(){var b=S.ibx;if(!S.ibT||Date.now()-S.ibT>20000)loadInbox();
+ var h='<div class="wz-card"><h3 style="margin:0 0 .7rem;font-size:1.05rem">💬 رسائلي الحقيقية</h3>';if(!b)return h+'<p class="note" style="margin:0">جاري التحميل…</p></div>';
+ var pend=b.requests.filter(function(r){return r.status==="pending"&&!r.mine});
+ if(pend.length)h+='<p style="margin:0 0 .4rem;font-weight:700">📩 طلبات تواصل جديدة</p>'+pend.map(function(r){return '<div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem"><button class="tl" style="margin:0;flex:1;text-align:start" data-a="rmo" data-v="'+r.id+'">'+esc(r.name||"")+'</button><button class="btn" style="margin:0;padding:.4rem .8rem;width:auto" data-a="racc" data-v="'+r.rid+'">قبول</button><button class="btn ghost" style="margin:0;padding:.4rem .8rem;width:auto" data-a="rrej" data-v="'+r.rid+'">رفض</button></div>'}).join("");
+ h+=b.chats.length?b.chats.map(function(c){return '<button data-a="rchat" data-v="'+c.id+'" data-n="'+esc(c.name||"")+'" style="display:flex;width:100%;align-items:center;gap:.6rem;background:none;border:0;border-bottom:1px solid var(--line);padding:.6rem 0;color:var(--ink);text-align:start;cursor:pointer;min-height:44px"><span style="flex:1;min-width:0"><b>'+esc(c.name||"")+'</b><br><small style="color:var(--mute);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(c.last||"")+'</small></span>'+(c.unread>0?'<span style="background:var(--accent);color:#fff;border-radius:99px;padding:.1rem .5rem;font-size:.75rem">'+N(c.unread)+'</span>':'')+'</button>'}).join(""):'<p class="note" style="margin:0">لا توجد محادثات بعد. افتح ملف عضو من الرئيسية واضغط «مراسلة».</p>';
+ if(b.likers.length)h+='<p style="margin:.9rem 0 .4rem;font-weight:700">❤️ أعجبوا بك ('+N(b.likers.length)+')</p><div style="display:flex;flex-wrap:wrap;gap:.4rem">'+b.likers.map(function(l){return '<button class="tl" style="margin:0" data-a="rmo" data-v="'+l.id+'">'+esc(l.name||"")+'</button>'}).join("")+'</div>';
+ return h+'</div>'}
+function photosCard(){if(!S.myPh)loadMyPhotos();var P=S.myPh||[],lim=(typeof tier==="function"&&tier()!=="free")?5:1;
+ var h='<div class="wz-card"><h3 style="margin:0 0 .3rem;font-size:1.05rem">📷 صوري</h3><p class="sub">'+(lim===1?'صورة واحدة للأعضاء المجانيين، وحتى ٥ صور للمشتركين.':'حتى ٥ صور.')+'</p><div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.7rem">';
+ h+=P.map(function(p,i){return '<div style="position:relative">'+(PH[p]?'<img src="'+PH[p]+'" alt="صورتي '+(i+1)+'" style="width:90px;height:110px;object-fit:cover;border-radius:12px">':'<span style="display:block;width:90px;height:110px;border-radius:12px;background:var(--soft)"></span>')+'<button aria-label="حذف الصورة" data-a="rphdel" data-v="'+i+'" style="position:absolute;top:4px;inset-inline-end:4px;width:30px;height:30px;border-radius:99px;border:0;background:rgba(0,0,0,.6);color:#fff;cursor:pointer">✕</button></div>'}).join("");
+ h+='</div>'+(P.length<lim?'<label class="btn ghost" style="display:block;text-align:center;cursor:pointer">'+(S.phUp?'جاري الرفع…':'＋ أضف صورة')+'<input type="file" id="rph" accept="image/*" style="display:none"></label>':'')
+ +'<label style="display:flex;gap:.5rem;align-items:center;margin-top:.8rem"><input type="checkbox" data-a="rphpub" '+(S.myPub?'checked':'')+'> <span>إظهار صوري لكل الأعضاء</span></label><p class="note" style="margin:.3rem 0 0">إذا لم تفعّلها، لا تظهر صورك إلا لمن قبلتَ طلب تواصله أو قبل طلبك.</p>'+(S.phMsg?'<p class="err">'+esc(S.phMsg)+'</p>':'')+'</div>';return h}
+/* ---------- ربطها بالتطبيق ---------- */
+view=(function(o){return function(){
+ if(S.step==="rmv")return memberView();
+ if(S.step==="rchat")return chatView();
+ var r=o();if(!D()||!S.reg||S.step!=="res")return r;
+ if(S.tab==="m")return membersCard()+r;
+ if(S.tab==="t")return inboxCard()+r;
+ if(S.tab==="p")return photosCard()+r;
+ return r}})(view);
+app.addEventListener("click",function(e){var b=e.target.closest("[data-a]");if(!b)return;var a=b.dataset.a,v=b.dataset.v,k=D();
+ var mine=["rmo","rmback","rmref","rlike","rmsg","rcr","rrep","rrsend","rsend","rcback","rchat","racc","rrej","rphdel","rphpub"];if(mine.indexOf(a)<0)return;
+ if(a!=="rphpub")e.stopImmediatePropagation();if(!k){return}
+ var me=k.uid(),m=S.rmv;
+ if(a==="rmo"){openMember(v)}
+ else if(a==="rmback"){S.step=S.rmPrev&&S.rmPrev!=="rmv"&&S.rmPrev!=="rchat"?S.rmPrev:"res";S.rmRep=false;draw()}
+ else if(a==="rmref"){loadMembers(true)}
+ else if(a==="rlike"&&m){var q=S.rmLiked?k.db.from("likes").delete().eq("liker",me).eq("liked",m.id):k.db.from("likes").insert({liker:me,liked:m.id});S.rmLiked=!S.rmLiked;draw();q.then(function(r){if(r.error){S.rmLiked=!S.rmLiked;S.rmMsg=err(r.error);draw()}})}
+ else if(a==="rmsg"&&m){S.rmc={id:m.id,name:m.name};S.rmsgs=null;S.rmMsg="";S.step="rchat";draw();loadChat()}
+ else if(a==="rchat"){S.rmc={id:v,name:b.dataset.n};S.rmsgs=null;S.rmMsg="";S.rmPrev="res";S.step="rchat";draw();loadChat()}
+ else if(a==="rcback"){S.step="res";S.tab="t";S.ibT=0;draw()}
+ else if(a==="rcr"&&m){k.db.from("contact_requests").insert({from_user:me,to_user:m.id}).then(function(r){if(r.error){S.rmMsg=err(r.error)}else{S.rmCr={status:"pending",from_user:me};S.rmMsg="تم إرسال طلب التواصل."}draw()})}
+ else if(a==="rrep"){S.rmRep=!S.rmRep;draw()}
+ else if(a==="rrsend"&&m){var rr=document.getElementById("rrr"),rd=document.getElementById("rrd");k.db.from("reports").insert({reported:m.id,reason:rr?rr.value:"other",details:rd?rd.value.slice(0,200):""}).then(function(r){S.rmRep=false;S.rmMsg=r.error?err(r.error):"تم إرسال البلاغ للمشرفين، شكرًا لك.";draw()})}
+ else if(a==="rsend"&&S.rmc){var i=document.getElementById("msg"),tx=i?i.value.trim():"";if(!tx)return;if(typeof smart==="function"){var bad=smart(tx);if(bad){S.rmMsg="تم حجب الرسالة لأنها تخالف سياسة الاستخدام.";draw();return}}
+  i.value="";k.db.from("messages").insert({sender:me,receiver:S.rmc.id,body:tx}).then(function(r){if(r.error){S.rmMsg=err(r.error);var j=document.getElementById("msg");if(j)j.value=tx;draw()}else{S.rmMsg="";loadChat()}})}
+ else if(a==="racc"||a==="rrej"){k.db.from("contact_requests").update({status:a==="racc"?"accepted":"rejected"}).eq("id",Number(v)).then(function(){S.ibT=0;loadInbox()})}
+ else if(a==="rphdel"){var P=(S.myPh||[]).slice(),pth=P.splice(Number(v),1)[0];k.db.from("profiles").update({photos:P}).eq("id",me).then(function(r){if(!r.error){S.myPh=P;k.db.storage.from("photos").remove([pth]);draw()}})}
+ else if(a==="rphpub"){var on=b.checked;k.db.from("profiles").update({photo_public:on}).eq("id",me).then(function(r){if(!r.error)S.myPub=on;draw()})}
+},true);
+app.addEventListener("change",function(e){if(e.target.id!=="rph")return;e.stopImmediatePropagation();var f=e.target.files&&e.target.files[0],k=D();if(!f||!k)return;
+ S.phUp=1;S.phMsg="";draw();var im=new Image(),u=URL.createObjectURL(f);im.onload=function(){var s=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext("2d").drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);
+  c.toBlob(function(bl){var me=k.uid(),pth=me+"/"+Date.now()+".jpg";k.db.storage.from("photos").upload(pth,bl,{contentType:"image/jpeg"}).then(function(r){if(r.error){S.phUp=0;S.phMsg="تعذّر رفع الصورة.";draw();return}
+   var P=(S.myPh||[]).concat([pth]);k.db.from("profiles").update({photos:P}).eq("id",me).then(function(x){S.phUp=0;if(x.error){S.phMsg="تعذّر حفظ الصورة.";}else{S.myPh=P;sign([pth])}draw()})})},"image/jpeg",.82)};
+ im.onerror=function(){S.phUp=0;S.phMsg="تعذّر قراءة الصورة.";draw()};im.src=u},true);
+setInterval(function(){if(!D())return;if(S.step==="rchat")loadChat();else if(S.step==="res"&&S.tab==="t")loadInbox()},8000);
+})();
+applyTh();
 draw();
 })();
 </script>
