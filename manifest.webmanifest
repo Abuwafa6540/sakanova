@@ -1,0 +1,38 @@
+{
+ "name": "سكنوفا SAKANOVA",
+ "short_name": "سكنوفا",
+ "description": "تطبيق تعارف جاد بهدف الزواج",
+ "lang": "ar",
+ "dir": "rtl",
+ "id": "/sakanova/",
+ "start_url": "/sakanova/",
+ "scope": "/sakanova/",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#2A1240",
+ "theme_color": "#2A1240",
+ "categories": [
+  "social",
+  "lifestyle"
+ ],
+ "icons": [
+  {
+   "src": "sakanova-icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "sakanova-icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "sakanova-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
