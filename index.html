@@ -1137,6 +1137,14 @@ app.addEventListener("change",function(e){if(e.target.id!=="rph")return;e.stopIm
  im.onerror=function(){S.phUp=0;S.phMsg="تعذّر قراءة الصورة.";draw()};im.src=u},true);
 setInterval(function(){if(!D())return;if(S.step==="rchat")loadChat();else if(S.step==="res"&&S.tab==="t")loadInbox()},8000);
 })();
+/*ADMINBAR*/
+view=(function(o){return function(){var r=o();
+ if(S.step==="owner"&&S.own)r='<div class="wz-nav" style="margin-bottom:.8rem"><button class="btn ghost" data-a="skhome">🏠 الرئيسية</button></div>'+r;
+ if(S.role==="admin"&&S.step==="res")r='<div class="wz-card" style="border-color:var(--accent);padding:.7rem .9rem"><div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap"><b style="flex:1;min-width:8rem">👑 أنت الآن في وضع المدير</b><button class="tl" style="margin:0" data-a="ownp">لوحة التحكم</button><button class="tl" style="margin:0" data-a="skmem">العودة كعضو</button></div><p class="note" style="margin:.4rem 0 0">تتصفح التطبيق بصلاحيات المدير. اضغط على اسم أي عضو لإجراءات الإشراف.</p></div>'+r;
+ return r}})(view);
+app.addEventListener("click",function(e){var b=e.target.closest("[data-a]");if(!b)return;var a=b.dataset.a;if(a!=="skhome"&&a!=="skmem")return;e.stopImmediatePropagation();
+ if(a==="skhome"){S.step="res";S.tab="m";S.open=null}else{S.role="user";S.step="res";S.tab="m"}
+ draw();window.scrollTo(0,0)},true);
 applyTh();
 draw();
 })();
