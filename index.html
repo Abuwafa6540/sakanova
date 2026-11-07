@@ -1051,7 +1051,7 @@ applyTh=(function(o){return function(){o();try{var cs=getComputedStyle(document.
 (function(){var st=document.createElement("style");st.textContent='.wz-h{display:flex;align-items:center;gap:.8rem;margin:.2rem 0 1rem}.wz-h h2{margin:0;font-size:1.3rem}.wz-h p{margin:.15rem 0 0;color:var(--mute);font-size:.88rem}.wz-steps{display:flex;gap:.35rem;margin:0 0 .45rem}.wz-steps i{flex:1;height:7px;border-radius:99px;background:var(--line);transition:background .3s}.wz-steps i.on{background:var(--brand)}.wz-cnt{font-size:.82rem;color:var(--mute);margin:0 0 1rem;display:flex;justify-content:space-between}.wz-card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.1rem 1rem 1rem;margin-bottom:1rem;box-shadow:0 6px 24px rgba(0,0,0,.08)}.wz-card h3{margin:0 0 .2rem;font-size:1.15rem;color:var(--ink)}.wz-card .sub{margin:0 0 1rem;color:var(--mute);font-size:.88rem}.wz-nav{display:flex;gap:.6rem;margin-bottom:1.2rem}.wz-nav .btn{flex:1;margin:0}.wz-ic{width:46px;height:46px;border-radius:14px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex:none}';document.head.appendChild(st)})();
 var WZ=[["👤","البيانات الأساسية","٧ خانات فقط، والباقي بعد التسجيل إن أردت"],["✅","التأكيد والموافقة","خطوة أخيرة قبل التحقق من حسابك"]];
 function wzHead(){var n=WZ.length,i=S.rs||0,b='';for(var j=0;j<n;j++)b+='<i class="'+(j<=i?'on':'')+'"></i>';
- return '<button class="tl" data-a="home">← الرئيسية</button><div class="wz-h">'+LOGO(44)+'<div><h2>أهلاً بك في سكنوفا</h2><p>أنشئ ملفك خطوة بخطوة، ويمكنك تعديله لاحقًا</p></div></div><div class="wz-steps" aria-hidden="true">'+b+'</div><p class="wz-cnt"><span>الخطوة '+(i+1).toLocaleString("ar-EG")+' من '+n.toLocaleString("ar-EG")+'</span><span>'+Math.round((i+1)/n*100).toLocaleString("ar-EG")+'٪</span></p>'}
+ return '<button class="tl" data-a="home">← الرئيسية</button><div class="wz-h"><div><h2>أهلاً بك في سكنوفا</h2><p>أنشئ ملفك خطوة بخطوة، ويمكنك تعديله لاحقًا</p></div></div><div class="wz-steps" aria-hidden="true">'+b+'</div><p class="wz-cnt"><span>الخطوة '+(i+1).toLocaleString("ar-EG")+' من '+n.toLocaleString("ar-EG")+'</span><span>'+Math.round((i+1)/n*100).toLocaleString("ar-EG")+'٪</span></p>'}
 profv=(function(orig){return function(){
  var i=S.rs||0,cap=[],od=dts;dts=function(t,h){cap.push(h);return ''};
  var rest;try{if(i<1)pflds2("p",true);else rest=orig()}finally{dts=od}
@@ -1207,6 +1207,9 @@ view=(function(o){return function(){var r=o();
 app.addEventListener("click",function(e){var b=e.target.closest("[data-a]");if(!b)return;var a=b.dataset.a;if(a!=="skhome"&&a!=="skmem")return;e.stopImmediatePropagation();
  if(a==="skhome"){S.step="res";S.tab="m";S.open=null}else{S.role="user";S.step="res";S.tab="m"}
  draw();window.scrollTo(0,0)},true);
+/*SAUDIFIRST*/
+(function(){try{var sa=(typeof CWN!=="undefined"&&CWN.SA)||"السعودية";if(CT.indexOf(sa)>-1)CT=[sa].concat(CT.filter(function(x){return x!==sa}));
+ ["k","rc"].forEach(function(f){if(!S.me[f]||S.me[f]==="السعودية"||CT.indexOf(S.me[f])<0)S.me[f]=sa})}catch(e){}})();
 applyTh();
 draw();
 })();

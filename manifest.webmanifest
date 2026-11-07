@@ -34,5 +34,48 @@
    "type": "image/png",
    "purpose": "maskable"
   }
+ ],
+ "display_override": [
+  "standalone",
+  "minimal-ui"
+ ],
+ "launch_handler": {
+  "client_mode": "navigate-existing"
+ },
+ "handle_links": "preferred",
+ "prefer_related_applications": false,
+ "related_applications": [],
+ "edge_side_panel": {
+  "preferred_width": 420
+ },
+ "screenshots": [
+  {
+   "src": "screenshot-1.png",
+   "sizes": "824x1830",
+   "type": "image/png",
+   "form_factor": "narrow",
+   "label": "الصفحة الرئيسية في سكنوفا"
+  },
+  {
+   "src": "screenshot-3.png",
+   "sizes": "824x1830",
+   "type": "image/png",
+   "form_factor": "narrow",
+   "label": "تسجيل سريع بخطوتين"
+  },
+  {
+   "src": "screenshot-2.png",
+   "sizes": "824x1830",
+   "type": "image/png",
+   "form_factor": "narrow",
+   "label": "الباقات والاشتراكات"
+  },
+  {
+   "src": "screenshot-wide.png",
+   "sizes": "1280x800",
+   "type": "image/png",
+   "form_factor": "wide",
+   "label": "سكنوفا على شاشة كبيرة"
+  }
  ]
 }
